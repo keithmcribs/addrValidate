@@ -1,0 +1,213 @@
+
+.clr{
+	clear:both;
+
+}
+
+
+body{
+	background-color:#f4f4f4;
+	color:#555;
+	font-familiy: Georgia, serif;
+	font-size:16px;
+	line-height:1.6em;
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+    
+}
+
+
+.main-header{
+		
+	color:#fff;
+	overflow:hidden;
+	background-color:#444343;
+	
+}
+
+.container{
+
+	margin:0 auto;
+	padding:0;
+	align:center;
+	width:80%;
+	text-align:center;
+
+}
+
+.links{
+	box-sizing:border-box;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+
+}
+.main-header ul{
+	padding:0;
+	margin:0;
+	padding-top:50px;
+	list-style:none;
+	box-sizing:border-box;
+
+}
+
+.main-header li{
+	padding:0;
+	margin:0;
+	display:inline;
+	box-sizing:border-box;
+	
+}
+
+
+.main-header a{
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-weight: 150;
+	color:#fff;
+	text-decoration:none;
+	font-size: 20px;
+	padding-right:80px;
+
+}
+.main-header a:hover{
+	color:#79BF49;
+}
+
+
+
+
+
+/*---------------*/
+
+
+
+.showcase{
+	
+	padding:0;
+	height:100%;
+	background-size:100% 100%;
+	width:auto;
+	min-height:300px;
+	text-align:center;
+	margin:0;
+	padding:0 0;
+	background-color:#444343;
+
+
+}
+
+.casePart{
+	margin:0 auto;
+	padding:0;
+	align:center;
+	width:98%;
+	display:flex;
+	padding-top:5%;
+	padding-bottom:23%;
+	background-image:url('../images/bgblue3.jpg');
+	background-repeat:no-repeat;
+	background-position:center left;
+	
+}
+		
+.main{
+		
+	padding:0;
+	margin:0;
+	padding-right:10px;
+	float:left;
+	width:18%;
+	color:#444343;
+	background-color:#444343;
+	height:90%;
+	font-size: 35px;
+	color:white;
+	line-height:.1em;
+	text-align:right;
+	min-width:15%;
+
+}
+.main h1 {
+	line-height:.1em;
+
+}
+.highlight{
+	color:#79BF49;
+}
+
+
+
+hr {
+	
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 2px solid #8FAADC;
+    padding: 0;
+	box-sizing:border-box;
+	overflow:hidden;
+
+}
+
+
+.table{
+	background-color:#444343;
+	color:white;
+	font-size: 20px; 
+	
+	float:right;
+	width:82%;
+	box-sizing:border-box;
+	overflow:scroll;
+	padding:0;
+	margin:0;
+
+	margin-left: 5%;
+	padding:10px;
+}
+
+.logo-slogan h1{
+	
+	font-size: 100px;
+	line-height:.9em;
+	
+	padding:0;
+	margin:0;
+	width:100%;
+	color:white;
+	line-height:.9em;
+	text-align:left;
+	margin-left:1%;
+
+
+}
+
+
+footer{
+	
+	box-sizing:border-box;
+	background:#444343;
+	color:#fff;	 
+	text-align:center;
+	padding:0;
+	margin:0;
+	height:100%;
+	margin-top:-18px;
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

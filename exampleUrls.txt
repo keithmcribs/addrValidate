@@ -1,0 +1,8 @@
+https://secure.shippingapis.com/ShippingAPI.dll?API=Verify&XML=<AddressValidateRequest USERID="526UNIVE2226"><Revision>1</Revision><Address ID="0"><Address1></Address1><Address2>4800 Calhoun Rd</Address2><City></City><State>Tx</State><Zip5>77004</Zip5><Zip4></Zip4></Address></AddressValidateRequest>
+
+http://production.shippingapis.com/ShippingAPI.dll?API=Verify&XML=<AddressValidateRequest USERID="526UNIVE2226"><Revision>1</Revision><Address ID="0"><Address1></Address1><Address2>4800 Calhoun Rd</Address2><City></City><State>Tx</State><Zip5>77004</Zip5><Zip4></Zip4></Address></AddressValidateRequest>
+
+
+http://production.shippingapis.com/ShippingAPI.dll?API=ZipCodeLookup&XML=<ZipCodeLookupRequest USERID="PUT YOUR ID"><Address ID="1"><Address1></Address1><Address2>12331-B Riata Trace Pkwy 300</Address2><City>Austin</City><State>TX</State><Zip5>78727</Zip5><Zip4></Zip4></Address></ZipCodeLookupRequest>
+
+"<AddressValidateRequest USERID = \"THE_ID_YOU_CREATE\"><AddressID = \"0\"><Address1>< / Address1><Address2>\"4800 Calhoun Rd\"< / Address2><City>\"Houston\"< / City><State>\"TX\"<State><Zip5>\"77004\"< / Zip5><Zip4>< / Zip4>< / Address>< / AddressValidateRequest>"

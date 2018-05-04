@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+	
+
+	<head>
+		<title> UnUnited Customer </title>			
+		<link rel="stylesheet" type="text/css" href="css/cuslogin.css">
+
+	</head>	
+
+
+	<body>
+			
+
+		
+		<header>
+				<h1><a href = "index.html"><span class="highlight">Un</span>United <span class="highlight">Customer Address Validation</span></a></h1>		
+				
+		</header>
+	
+					
+					
+		<section class="showcase">
+		
+			<div class="pane">					
+						  
+						  <form class= "form9" method="POST"> 
+								
+								<span>Suite/Apartment No.</span><input type="text" name="apt" id= "apt" maxlength="38"> <br>								
+								<span>Street</span><input type="text" name="street" id= "street"  maxlength="38"> <br>
+								<span>City</span><input type="text" name="city" id = "city"  maxlength="15"> <br>
+								<span>State</span><input type="text" id = "state" name="state" placeholder="XX" maxlength="2"> <br>
+								<span>Zip</span><input type="text" id = "zip" name="zip" maxlength="5"> <br>
+								<button class = "val" id ="val" onclick="inputs(event,this.id)" type="submit9" name="submit9">Validate</button>
+								
+								<!--Passing Test cases-->
+								<div class= "PassedCase">									
+									<hr>
+									<span>Sample Addresses (Test Cases)</span><br>								
+									<select name="ab" id = "cases" onchange="if (this.selectedIndex) inputs(event,this);">
+										<option value="-1">--</option>
+										<option id = "case5" value="5">[Empty Fields]</option>
+										<option id = "case6" value="6">Street</option>										
+										<option id = "case1" value="1">Street, Zip</option> 
+										<option id = "case2" value="2">Street, City, State</option>
+										<option id = "case3" value="3">Street, City, State, zip</option>
+										<option id = "case4" value="4">Incorrect Spelling Auto-correction Case</option>
+										
+										
+										
+									</select>
+								</div>
+								
+							
+							
+							</form>
+							
+							
+							<form class = "form10" method = "POST">
+							<br><br>
+								<span><p id="header"></p></span>							
+								<p id="ap"></p>							
+								<p id="str"></p>
+								<p id="ct"></p>
+								<p id="st"></p>
+								<p id="zp"> <div id = "zp4"></div></p>
+							</form>
+						
+					
+					
+						
+						<script>
+									
+									
+							
+							
+							
+							function inputs(e,id){		
+
+								document.getElementById("header").innerHTML ="";
+								document.getElementById("str").innerHTML = "";
+								document.getElementById("ct").innerHTML = "";
+								document.getElementById("st").innerHTML = "";
+								document.getElementById("zp").innerHTML = "";
+								document.getElementById("zp4").innerHTML = "";					
+								
+								var apt = document.getElementById("apt").value;																				
+								var street = document.getElementById("street").value;
+								var city = document.getElementById("city").value;
+								var state = document.getElementById("state").value;								
+								var zip = document.getElementById("zip").value;											
+								
+									
+								if(id != "val"){															
+									var passedID = id[id.selectedIndex].id;
+									
+									if(passedID == "case1"){		
+										window.alert("Test Case: Minimal Validated Addresss Case\nStreet:4800 Calhoun Rd\nZip:77004\n\nExpected Result:\nAddress will be validated.");																			
+										
+										document.getElementById("street").value = "";																			
+										document.getElementById("apt").value = "";
+										document.getElementById("city").value = "";
+										document.getElementById("state").value = "";
+										document.getElementById("zip").value = "";
+										
+										
+										document.getElementById("street").value = "4800 Calhoun Rd";									
+										document.getElementById("zip").value = "77004";
+										
+
+										return;
+
+									}else if(passedID == "case2"){	
+										window.alert("Test Case: City+State Validated Case\nStreet:4800 Calhoun Rd\nCity: Houston\nState: Tx\n\nExpected Result:\nAddress will be validated.");	
+
+										document.getElementById("street").value = "";																			
+										document.getElementById("apt").value = "";
+										document.getElementById("city").value = "";
+										document.getElementById("state").value = "";
+										document.getElementById("zip").value = "";
+																				
+										document.getElementById("street").value = "4800 Calhoun Rd";
+										document.getElementById("city").value = "Houston";
+										document.getElementById("state").value = "Tx";
+										return;
+
+									}
+									else if(passedID == "case3"){		
+										window.alert("Test Case: City+State and Zip Validated Case\nStreet:4800 Calhoun Rd\nCity: Houston\nState: Tx\nZip:77004\n\nExpected Result:\nAddress will be validated.");																				
+										
+										document.getElementById("street").value = "";																			
+										document.getElementById("apt").value = "";
+										document.getElementById("city").value = "";
+										document.getElementById("state").value = "";
+										document.getElementById("zip").value = "";
+																				
+										document.getElementById("street").value = "4800 Calhoun Rd";
+										document.getElementById("city").value = "Houston";
+										document.getElementById("state").value = "Tx";										
+										document.getElementById("zip").value = "77004";
+										return;
+
+									}else if(passedID == "case4"){	
+									
+										window.alert("Test Case: Incorrect Spelling Auto Corrected\nStreet:4800 Calhoun Rd\nCity: Huston\nState: Tx\n\nExpected Result:\nHuston will be corrected.\nAddress will be validated.");	
+										
+										document.getElementById("street").value = "";																			
+										document.getElementById("apt").value = "";
+										document.getElementById("city").value = "";
+										document.getElementById("state").value = "";
+										document.getElementById("zip").value = "";										
+									
+										document.getElementById("street").value = "4800 Calhoun Rd";
+										document.getElementById("city").value = "Huston";
+										document.getElementById("state").value = "Tx";				
+										return;									
+
+
+									}else if(passedID == "case5"){	
+
+		
+										window.alert("Test Case: Most Basic Case\nAll Fields are blank\n\nExpected Result:\n'Street is required.' message will appear.\nAddress will not be validated.");																				
+										
+										document.getElementById("street").value = "";																			
+										document.getElementById("apt").value = "";
+										document.getElementById("city").value = "";
+										document.getElementById("state").value = "";
+										document.getElementById("zip").value = "";
+										return;									
+										
+
+									}else if(passedID == "case6"){		
+										window.alert("Test Case: City+State or Zip is required.\nStreet:4800 Calhoun Rd\n\nExpected Result:\n'City + State or Zip is required.' message will appear.\nAddress will not be validated.");																				
+																
+										document.getElementById("street").value = "";																			
+										document.getElementById("apt").value = "";
+										document.getElementById("city").value = "";
+										document.getElementById("state").value = "";
+										document.getElementById("zip").value = "";				
+										
+										document.getElementById("street").value = "4800 Calhoun Rd";
+															
+										return;
+
+									}
+
+
+								}
+																						
+					
+								//Checking if user entered Street 
+									if(street == null || street == ""){
+										window.alert("Street is required.")
+										return;
+									
+									//check if either city+state or zip is filled out
+									}else if((zip == "" ) && (city == "" || state == "")){
+										window.alert("City + State or Zip is required.");
+										return;								
+									}
+								
+								 
+								 
+								var stuff = 'XML=<AddressValidateRequest USERID="526UNIVE2226"><Revision>1</Revision><Address ID="0"><Address1>'+apt+'</Address1><Address2>'+street+'</Address2><City>'+city+'</City><State>'+state+'</State><Zip5>'+zip+'</Zip5><Zip4></Zip4></Address></AddressValidateRequest>';
+
+								var http = new XMLHttpRequest();
+								var url = "https://secure.shippingapis.com/ShippingAPI.dll?API=Verify";
+								var text, parser, xmlDoc;
+								
+
+								
+								http.onreadystatechange = function(){
+
+									if(http.readyState == 4){
+										if(http.status == 200){
+										
+											//console.log(http.responseText);					
+											text = http.responseXML;
+											console.log(text);
+											
+											//error checking 
+											try{ 	
+												//assuming error
+												var er = text.getElementsByTagName("Description")[0].childNodes[0].nodeValue;
+												window.alert(er);	
+												if(apt != ""){	
+													document.getElementById("ap").innerHTML = "";
+												}
+												document.getElementById("header").innerHTML ="";
+												document.getElementById("str").innerHTML = "";
+												document.getElementById("ct").innerHTML = "";
+												document.getElementById("st").innerHTML = "";
+												document.getElementById("zp").innerHTML = "";
+												document.getElementById("zp4").innerHTML = "";
+												return;
+											
+												
+											}
+											//assuming no error found
+											catch(error){
+												document.getElementById("header").innerHTML = "Validated Address";
+												if(apt != ""){	
+													document.getElementById("ap").innerHTML = text.getElementsByTagName("Address1")[0].childNodes[0].nodeValue
+												}
+												document.getElementById("str").innerHTML = "Street:     " + text.getElementsByTagName("Address2")[0].childNodes[0].nodeValue;
+												document.getElementById("ct").innerHTML = "City:        " + text.getElementsByTagName("City")[0].childNodes[0].nodeValue;
+												document.getElementById("st").innerHTML = "State:       "+text.getElementsByTagName("State")[0].childNodes[0].nodeValue;
+												document.getElementById("zp").innerHTML = "Zip:         " + text.getElementsByTagName("Zip5")[0].childNodes[0].nodeValue;
+												document.getElementById("zp4").innerHTML = "Zip+4:      " +text.getElementsByTagName("Zip4")[0].childNodes[0].nodeValue;
+												
+												
+	
+											}																	
+											
+											
+
+
+										}
+										
+										if(http.status == 404){
+											console.log('file or resourse not found. 404');
+										}
+										
+									}
+								};
+
+								http.open("POST", url, true);
+								http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+								http.send(stuff);
+
+								console.log(http.readyState); 
+								e.preventDefault();
+
+							}	
+
+							
+						
+
+								
+							
+						
+							
+						</script>
+					
+						
+
+	
+				
+			</div>
+
+				
+		</section>
+		
+		<footer>
+			<p>
+				Copyright &copy; 2018  <span class= "highlight">Un</span>United  <span class= "highlight">Airlines</span> | <a href="index.html">Home</a>
+			</p>
+			
+		</footer>
+
+			
+		
+		
+	
+
+	
+
+
+	<div style='text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;display:block !important;'><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/free-website-sign-up?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website_ununited&amp;utm_content=footer_img"><img src="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png"  alt="www.000webhost.com"></a></div></body>
+
+
+
+
+
+</html>
